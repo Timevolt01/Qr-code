@@ -11,6 +11,7 @@
   <div class="container">
     <p>Enter your text or URL</p>
     <input type="text" placeholder="Text or URL" id="qrText">
+    <input type="file" placeholder="Image" id="qrImg">
 
     <div id="imgBox">
       <img src="" id="qrImage">
@@ -24,12 +25,14 @@
     let imgBox = document.getElementById("imgBox");
     let qrImage = document.getElementById("qrImage");
     let qrText = document.getElementById("qrText");
+    let qrImg = document.getElementById("qrImg");
 
 
     function generateQR() {
       if (qrText.value.length > 0) {
         qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + qrText.value;
         imgBox.classList.add("show-img");
+        qrImage.src =
       }
       else {
         qrText.classList.add('error');
